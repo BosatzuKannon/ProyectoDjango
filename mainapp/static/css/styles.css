@@ -185,6 +185,18 @@ nav ul li a:hover{
     margin-top: 5px;
 }
 
+.date{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: gray;
+}
+
+.content{
+    line-height: 25px;
+    text-align: justify;
+}
+
 .article-item{
     margin-bottom: 20px;
     margin-top: 20px;
