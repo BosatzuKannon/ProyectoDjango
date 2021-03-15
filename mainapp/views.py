@@ -44,17 +44,17 @@ def login_page(request):
     else:
 
         if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+        
+            user = authenticate(request, username=username, password=password)
 
-        user = authenticate(request, username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            return redirect('inicio')
-        else:
-            messages.warning(request,'Credenciales incorrectas')
-            #return redirect('login')
+            if user is not None:
+                login(request, user)
+                return redirect('inicio')
+            else:
+                messages.warning(request,'Credenciales incorrectas')
+                #return redirect('login')
 
         return render(request, 'users/login.html',{
             'title' : 'Identificate'
